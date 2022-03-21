@@ -66,11 +66,17 @@
    margin: 0 7rem;
 }
 
-.navbar__list {
+.navbar__list, .navbar-mobile__list {
    display: flex;
    justify-content: space-between;
    height: 100%;
 }
+
+.navbar-mobile {
+   display: none;
+   background-color: #eee;
+}
+
 
 .navbar__items {
    height: 100%;
@@ -81,7 +87,7 @@
    background-color: rgba(255,255,255,0.2);
 }
 
-.navbar__link {
+.navbar__link, .navbar-mobile__link {
    padding: 1.4rem 0;
    display: block;
    width: 100%;
@@ -89,6 +95,10 @@
    text-decoration: none;
    color: white;
    font-size: 0.9rem;
+}
+
+.navbar-mobile__link {
+   color: #8e8e8e;
 }
 
 .header__control {
@@ -224,6 +234,10 @@
 
 .cate__img {
    transition: all 0.3s;
+}
+
+.cate__type {
+   text-align: center;
 }
 
 .cate__items:hover .cate__img {
@@ -528,6 +542,12 @@
    justify-content: space-between;
 }
 
+.tel {
+   text-decoration: none;
+   color: #0071e3;
+   font-weight: 500;
+}
+
 .foot-certify {
    display: flex;
    justify-content: space-between;
@@ -600,29 +620,90 @@
 
 /* REPONSIVE */
 
-@media screen  and (max-width: 1200px){
+@media screen and (max-width: 1335px) {
    .size--large {
       max-width: 1024px;
-   }
-
-   .policy__items {
-      --columns: 3;
    }
 
    .slider__cate-items {
       height: 410px;
    }
-}
-@media screen  and (max-width: 1024px){
-   .size--large {
-      max-width: 768px;
+
+   .slide__items {
+      height: 290px;
    }
+}
+
+@media screen  and (max-width: 1200px){
+   .policy__items {
+      --columns: 3;
+   }   
+}
+@media screen  and (max-width: 1130px){
+   .size--large {
+      max-width: 860px;
+   }
+
+   .navbar {
+      margin: 0 2rem;
+   }
+
+   /* .navbar__link {
+      font-size: 0.8rem;
+   } */
 
    .policy__items {
       --columns: 2;
    }
 
    .slider__cate-items {
-      height: 410px;
+      height: 436px;
+   }
+
+   .slider__cate-list .slick-prev, .box-slide .slick-prev {
+      left: -4%;
+   }
+   
+   .slider__cate-list .slick-next, .box-slide .slick-next {
+      right: -6%;
+   }
+
+   .choose-cate {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .cate__img {
+      width: 60%;
+   }
+
+   .slide__items {
+      height: 260px;
+   }
+
+   .slide__time {
+      /* padding: 0 10px 10px;    */
+   }
+}
+
+@media screen  and (max-width: 965px) {
+   .navbar {
+      display: none;
+   }
+
+   .navbar-mobile {
+      display: block;
+   }
+
+   .body {
+      margin-top: 120px;
+   }
+
+   .choose-cate {
+      grid-gap: 10px;
+      padding: 20px;
+   }
+
+   .cate__img {
+      width: 100%;
    }
 }
