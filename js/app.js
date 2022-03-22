@@ -13,32 +13,32 @@ $(document).ready(function(){
   });
 });
 
-$(document).ready(function(){
-  $(".slider__cate-list").slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    draggable: false,
-    prevArrow:`<button type='button' class='slick-prev slick-arrow'><i class="fa-solid fa-arrow-left"></i></button>`,
-    nextArrow:`<button type='button' class='slick-next slick-arrow'><i class="fa-solid fa-arrow-right"></i></button>`,
-    responsive: [
-      {
-        breakpoint: 1130,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: "unslick",
-      }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  });
-});
+// $(document).ready(function(){
+//   $(".slider__cate-list").slick({
+//     infinite: true,
+//     slidesToShow: 4,
+//     slidesToScroll: 4,
+//     draggable: false,
+//     prevArrow:`<button type='button' class='slick-prev slick-arrow'><i class="fa-solid fa-arrow-left"></i></button>`,
+//     nextArrow:`<button type='button' class='slick-next slick-arrow'><i class="fa-solid fa-arrow-right"></i></button>`,
+//     responsive: [
+//       {
+//         breakpoint: 1130,
+//         settings: {
+//           slidesToShow: 3,
+//           slidesToScroll: 3,
+//         }
+//       },
+//       {
+//         breakpoint: 965,
+//         settings: "unslick",
+//       }
+//       // You can unslick at a given breakpoint now by adding:
+//       // settings: "unslick"
+//       // instead of a settings object
+//     ]
+//   });
+// });
 
 $(document).ready(function(){
   $(".box-slide").slick({
@@ -47,7 +47,17 @@ $(document).ready(function(){
     slidesToScroll: 3,
     draggable: false,
     prevArrow:`<button type='button' class='slick-prev slick-arrow'><i class="fa-solid fa-arrow-left"></i></button>`,
-    nextArrow:`<button type='button' class='slick-next slick-arrow'><i class="fa-solid fa-arrow-right"></i></button>`
+    nextArrow:`<button type='button' class='slick-next slick-arrow'><i class="fa-solid fa-arrow-right"></i></button>`,
+    responsive:[{
+      breakpoint: 775,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        arrows: false,
+        draggable: true
+      }
+    }]
   });
 });
 
@@ -59,7 +69,16 @@ $(document).ready(function(){
     draggable: false,
     dots: true,
     prevArrow:`<button type='button' class='slick-prev slick-arrow'><i class="fa-solid fa-arrow-left"></i></button>`,
-    nextArrow:`<button type='button' class='slick-next slick-arrow'><i class="fa-solid fa-arrow-right"></i></button>`
+    nextArrow:`<button type='button' class='slick-next slick-arrow'><i class="fa-solid fa-arrow-right"></i></button>`,
+    responsive:[{
+      breakpoint: 775,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        arrows: false
+      }
+    }]
   });
 });
 

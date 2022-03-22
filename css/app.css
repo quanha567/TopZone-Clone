@@ -15,14 +15,14 @@
    margin: 0 auto;
 }
 
+.app {
+   overflow-x: hidden;
+}
+
+
 .header {
    background-color: var(--primary-color);
    font-family: 'Inter', sans-serif;
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   z-index: 999;
 }
 
 .header .size--large {
@@ -72,6 +72,10 @@
    height: 100%;
 }
 
+.navbar-mobile__list {
+   justify-content: space-around;
+}
+
 .navbar-mobile {
    display: none;
    background-color: #eee;
@@ -99,6 +103,7 @@
 
 .navbar-mobile__link {
    color: #8e8e8e;
+   font-size: 13px;
 }
 
 .header__control {
@@ -130,10 +135,9 @@
    background-color: #333;
    color: white;
    font-family: 'Inter', sans-serif;
-   margin-top: 60px;
 }
 
-.slider__list .slick-arrow, .slider__cate-list .slick-arrow, .box-slide .slick-arrow, .slide-intro .slick-arrow {
+.slider__list .slick-arrow, .box-slide .slick-arrow, .slide-intro .slick-arrow {
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
@@ -148,7 +152,7 @@
    height: 60px;
 }
 
-.slider__cate-list .slick-arrow, .box-slide .slick-arrow, .slide-intro .slick-arrow {
+.box-slide .slick-arrow, .slide-intro .slick-arrow {
    font-size: 1rem;
    width: 50px;
    height: 50px;
@@ -156,14 +160,6 @@
 
 .slick-prev {
    left: 3%
-}
-
-.slider__cate-list .slick-prev, .box-slide .slick-prev {
-   left: -3%;
-}
-
-.slider__cate-list .slick-next, .box-slide .slick-next {
-   right: -5%;
 }
 
 .slick-next {
@@ -261,14 +257,15 @@
 }
 
 .slider__cate-list{
-   margin-left: -20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+   grid-gap: 20px;
 }
 
 .slider__cate-items {
    background-color: #232323;
    border-radius: 20px;
    padding: 40px 10px 20px;
-   margin-left: 20px;
    height: 455px;
    display: flex !important;
    flex-direction: column;
@@ -321,6 +318,29 @@
    font-size: 1.2rem;
 }
 
+.btn-watch-product {
+   display: block;
+   background-color: #232323;
+   border: none;
+   outline: none;
+   font-size: 0.9rem;
+   padding: 20px 70px;
+   margin: 20px auto;
+   border-radius: 10px;
+   color: white;
+}
+
+.btn-watch-product a {
+   text-decoration: none;
+   margin-right: 10px;
+   color: white;
+}
+
+.btn-watch-product:hover {
+   cursor: pointer;
+   box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+}
+
 .box-slide {
    margin-left: -20px;
 }
@@ -365,6 +385,7 @@
 .intro__topzone {
    margin-top: 80px;
    position: relative;
+   background-color: #000;
 }
 
 .video-intro {
@@ -406,7 +427,7 @@
    font-size: 0.9rem;
    text-align: center;
    position: absolute;
-   bottom: 5%;
+   bottom: 2%;
    left: 50%;
    transform: translateX(-50%);
    text-decoration: none;
@@ -458,10 +479,9 @@
 }
 
 .loc-wrapper {
-   margin-top: 317px;
    background-color: #000;
    color: white;
-   padding-top: 50px;
+   padding-top: 340px;
    box-sizing: border-box !important;
 }
 
@@ -607,20 +627,25 @@
 }
 
 .foot-logo-relation__link {
-   width: 100%;
-   margin:0 5px 10px;
-}
-
-.foot-logo-relation__link {
    width: 133px;
    height: 40px;
+   margin: 0 5px 10px;
+}
+
+.foot-logo-relation__img {
+   width: 100%;
    object-fit: cover;
 }
 
 
 /* REPONSIVE */
 
-@media screen and (max-width: 1335px) {
+/* large screen */
+@media screen  and (max-width: 1200px){
+   .policy__items {
+      --columns: 3;
+   }   
+
    .size--large {
       max-width: 1024px;
    }
@@ -634,23 +659,15 @@
    }
 }
 
-@media screen  and (max-width: 1200px){
-   .policy__items {
-      --columns: 3;
-   }   
-}
-@media screen  and (max-width: 1130px){
+/* on pc desktop */
+@media screen  and (max-width: 1024px){
    .size--large {
-      max-width: 860px;
+      max-width: 775px;
    }
 
    .navbar {
       margin: 0 2rem;
    }
-
-   /* .navbar__link {
-      font-size: 0.8rem;
-   } */
 
    .policy__items {
       --columns: 2;
@@ -658,14 +675,6 @@
 
    .slider__cate-items {
       height: 436px;
-   }
-
-   .slider__cate-list .slick-prev, .box-slide .slick-prev {
-      left: -4%;
-   }
-   
-   .slider__cate-list .slick-next, .box-slide .slick-next {
-      right: -6%;
    }
 
    .choose-cate {
@@ -680,12 +689,17 @@
       height: 260px;
    }
 
-   .slide__time {
-      /* padding: 0 10px 10px;    */
+   .text-intro {
+      width: 80%;
    }
 }
 
-@media screen  and (max-width: 965px) {
+@media screen  and (max-width: 775px) {
+   .size--large {
+      max-width: 480px;
+      padding: 20px;
+   }
+
    .navbar {
       display: none;
    }
@@ -694,8 +708,8 @@
       display: block;
    }
 
-   .body {
-      margin-top: 120px;
+   .navbar-mobile__items {
+      font-weight: 400;
    }
 
    .choose-cate {
@@ -705,5 +719,102 @@
 
    .cate__img {
       width: 100%;
+   }
+
+   .slider__cate-list {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+   }
+
+   .slider__cate-items {
+      height: 400px;
+   }
+
+   .gradient-bg {
+      bottom: -20%;
+   }
+
+   .text-intro {
+      width: 80%;
+      bottom: 0;
+   }
+
+   .btn-w-more {
+      font-size: 0.7rem;
+      padding: 10px;
+      bottom: -15%;
+   }
+
+   .slide-intro-wrapper {
+      top: 120%;
+   }
+
+   .loc-wrapper {
+      padding-top: 500px;
+   }
+
+   .loc__choose {
+      flex-direction: column;
+      padding: 0;
+   }
+
+   .loc__select {
+      margin: 20px;
+   }
+
+   .loc__list {
+      grid-template-columns: 1fr;
+     margin-top: 20px;
+   }
+
+   .loc__name, .loc__place {
+      text-align: center;
+   }
+
+   .wrapper-foot-list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+   }
+
+   .foot-certify {
+      flex-direction: column;
+   }
+
+   .foot-certify-left {
+      margin-bottom: 20px;
+   }
+
+   .foot-certify-left, .foot-certify-right {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .gradient-bg {
+      bottom: -30%;
+      top: 0;
+   }
+
+   .text-intro {
+      width: 95%;
+      bottom: -5%;
+      font-size: 0.8rem;
+   }
+
+   .btn-w-more {
+      font-size: 0.7rem;
+      padding: 10px;
+      bottom: -25%;
+   }
+
+   .slide-intro-wrapper {
+      top: 130%;
+   }
+
+   .loc-wrapper {
+      padding-top: 350px;
+   }
+
+   .wrapper-foot-list {
+      grid-template-columns: 1fr;
    }
 }
